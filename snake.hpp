@@ -1,5 +1,6 @@
-#include "map.hpp"
 #include <atomic>
+
+#include "map.hpp"
 
 namespace snake {
 class Snake {

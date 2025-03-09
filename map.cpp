@@ -29,7 +29,7 @@ void Visual::visual(const char direct) {
       }
     }
     std::cout << std::endl;
-    
+
     std::cout << "+";
     for (int j = 0; j < width; j++) {
       std::cout << "--+";
@@ -64,7 +64,7 @@ void Visual::init(int length, const char direct) {
       nodes.push_front({i, width / 2});
     }
   }
-  
+
   set_food();
 }
 
@@ -84,13 +84,13 @@ bool Visual::is_valid_position(const Node &node) {
   if (node.first < 0 || node.first >= height || node.second < 0 || node.second >= width) {
     return false;
   }
-  
+
   for (size_t i = 0; i < nodes.size() - 1; ++i) {
     if (nodes[i] == node) {
       return false;
     }
   }
-  
+
   return true;
 }
 
@@ -106,11 +106,11 @@ void Visual::update_snake_body(const char &direct) {
 
 bool Visual::update(const char &direct) {
   Node new_head = update_node_with_direct(nodes.front(), direct);
-  
+
   if (!is_valid_position(new_head)) {
     return false;
   }
-  
+
   nodes.push_front(new_head);
   map_status.insert(new_head);
 
@@ -121,7 +121,7 @@ bool Visual::update(const char &direct) {
     nodes.pop_back();
     map_status.erase(tail);
   }
-  
+
   return true;
 }
 

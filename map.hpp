@@ -8,11 +8,9 @@
 namespace std {
 template <>
 struct hash<pair<int, int>> {
-    size_t operator()(const pair<int, int>& p) const {
-        return hash<int>()(p.first) ^ (hash<int>()(p.second) << 1);
-    }
+  size_t operator()(const pair<int, int> &p) const { return hash<int>()(p.first) ^ (hash<int>()(p.second) << 1); }
 };
-}
+}  // namespace std
 
 namespace snake {
 using Node = std::pair<int, int>;
