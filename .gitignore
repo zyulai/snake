@@ -1,3 +1,4 @@
 snake
 a.out
 snake.dSYM/
+*.o
